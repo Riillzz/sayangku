@@ -518,10 +518,10 @@ function createHeartCollage(){
         img.classList.add("heart-photo");
 
         img.style.left =
-            Math.random()*700 + "px";
+        heartPositions[index].x + "%";
 
         img.style.top =
-            Math.random()*600 + "px";
+        heartPositions[index].y + "%";
 
         container.appendChild(img);
 

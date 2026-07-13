@@ -259,21 +259,18 @@ button:hover{
 
 #heartContainer{
     position:relative;
-    width:800px;
-    height:700px;
+    width:min(90vw,700px);
+    aspect-ratio:1/1;
+    height:auto;
+    margin:auto;
 }
 
 .heart-photo{
     position:absolute;
-    width:60px;
-    height:60px;
-
+    width:70px;
+    height:70px;
     object-fit:cover;
-
     border-radius:15px;
-
-    box-shadow:0 10px 20px rgba(0,0,0,.3);
-
     transition:2s ease;
 }
 
@@ -334,4 +331,19 @@ button:hover{
         gap:20px;
     }
 
+}
+
+@media(max-width:768px){
+
+    #heartContainer{
+        width:95vw;
+        height:95vw;
+        max-width:420px;
+        max-height:420px;
+    }
+
+    .heart-photo{
+        width:50px;
+        height:50px;
+    }
 }
