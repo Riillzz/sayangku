@@ -480,8 +480,7 @@ const heartPositions = [];
 
 for(let i = 0; i < 30; i++){
 
-    const t =
-        (Math.PI * 2 * i) / 30;
+    const t = (Math.PI * 2 * i) / 30;
 
     const x =
         16 * Math.pow(Math.sin(t),3);
@@ -493,8 +492,8 @@ for(let i = 0; i < 30; i++){
         -Math.cos(4*t);
 
     heartPositions.push({
-        x:350 + x*18,
-        y:260 - y*18
+        x:50 + x * 2,
+        y:50 - y * 2
     });
 
 }
@@ -518,20 +517,20 @@ function createHeartCollage(){
         img.classList.add("heart-photo");
 
         img.style.left =
-        heartPositions[index].x + "%";
+        Math.random()*100 + "%";
 
         img.style.top =
-        heartPositions[index].y + "%";
+        Math.random()*100 + "%";
 
         container.appendChild(img);
 
         setTimeout(()=>{
 
-            img.style.left =
-                heartPositions[index].x + "px";
+           img.style.left =
+    heartPositions[index].x + "%";
 
-            img.style.top =
-                heartPositions[index].y + "px";
+img.style.top =
+    heartPositions[index].y + "%";
 
         },300);
 
