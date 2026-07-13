@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Our Symphony</title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================
+         BACKGROUND
+    =========================== -->
+    <div class="background">
+        <div class="blob blue"></div>
+        <div class="blob red"></div>
+        <div id="stars"></div>
+    </div>
+
+    <!-- ==========================
+         HERO
+    =========================== -->
+    <header class="hero">
+        <img
+            src="assets/images/vinyl.png"
+            class="vinyl"
+            alt="Vinyl">
+
+        <h1>
+            OUR SYMPHONY
+        </h1>
+
+        <p>
+            Every memory has a melody.
+        </p>
+        <button id="playButton">
+            🎵 PLAY 🎵
+        </button>
+        <span class="subtitle">
+            For Sayangku ❤️
+        </span>
+    </header>
+
+    <!-- ==========================
+         TRACK 01
+    =========================== -->
+    <section class="track">
+        <div class="track-content">
+            <span class="track-number">
+                TRACK 01
+            </span>
+            <h2>
+                The Beginning
+            </h2>
+            <p class="track-text">
+                Every beautiful story starts with a simple "hello".
+                I never imagined that one day,
+                you would become my favorite song,
+                my safest place,
+                and the most beautiful chapter of my life.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================
+         TRACK 02
+    =========================== -->
+    <section id="memoryBook" class="memory-book">
+        <div class="book-cover">
+            <span class="track-number">
+                TRACK 02
+            </span>
+            <h2>
+                Our Memory Book
+            </h2>
+            <p>
+                Every page has a memory.<br>
+                Every memory has you.
+            </p>
+            <button id="startBook">
+                📖 Open Our Memory Book
+            </button>
+        </div>
+
+        <!-- Album -->
+        <div id="bookViewer" class="hidden">
+            <img
+                id="memoryImage"
+                src=""
+                alt="Memory">
+            <p id="memoryCaption"></p>
+            <div class="book-navigation">
+                <button id="prevBtn">
+                    ← Previous
+                </button>
+                <span id="pageNumber">
+                    1 / 50
+                </span>
+                <button id="nextBtn">
+                    Next →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="heartSection" class="heart-section hidden">
+    <h2>Every memory leads to you ❤️</h2>
+    <div id="heartContainer"></div>
+    </section>
+
+    <!-- ==========================
+         FINAL TRACK
+    =========================== -->
+    <section class="final-track">
+        <button
+            id="letterButton"
+            onclick="location.href='letter.html'">
+            💌 Read My Letter
+        </button>
+    </section>
+
+    <!-- ==========================
+         AUDIO
+    =========================== -->
+    <audio id="music">
+        <source
+            src="assets/music/shape-of-my-heart.mp3"
+            type="audio/mpeg">
+    </audio>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

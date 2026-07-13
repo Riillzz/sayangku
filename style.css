@@ -1,0 +1,337 @@
+/* ==========================================
+   OUR SYMPHONY v4
+========================================== */
+
+/* ---------- RESET ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#081B33;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-2;
+}
+
+.blob{
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.45;
+}
+
+.blue{
+    background:#2E6EFF;
+    top:-120px;
+    left:-120px;
+}
+
+.red{
+    background:#D7263D;
+    bottom:-120px;
+    right:-120px;
+}
+
+/* ---------- STARS ---------- */
+
+#stars{
+    position:absolute;
+    inset:0;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:white;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.vinyl{
+    width:270px;
+    margin-bottom:35px;
+    filter:drop-shadow(0 15px 30px rgba(0,0,0,.4));
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:68px;
+    letter-spacing:5px;
+}
+
+.hero p{
+    margin:20px 0 35px;
+    font-size:20px;
+    color:#D7D7D7;
+}
+
+.subtitle{
+    margin-top:25px;
+    color:#BDBDBD;
+    letter-spacing:2px;
+}
+
+/* ---------- BUTTON ---------- */
+
+button{
+    padding:18px 42px;
+    border:none;
+    border-radius:999px;
+    background:#D7263D;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 25px rgba(215,38,61,.45);
+}
+
+#playButton{
+    opacity:1;
+}
+
+/* ---------- TRACK ---------- */
+
+.track,
+.memory-book,
+.final-track{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 30px;
+}
+
+.track-content,
+.book-cover{
+    width:700px;
+    max-width:100%;
+    text-align:center;
+}
+
+.track-number{
+    display:block;
+    color:#D7263D;
+    letter-spacing:6px;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.track h2,
+.memory-book h2{
+    font-family:"Playfair Display",serif;
+    font-size:56px;
+    margin-bottom:30px;
+}
+
+.track-text,
+.memory-book p{
+    color:#D6D6D6;
+    font-size:20px;
+    line-height:2;
+}
+
+/* ---------- MEMORY BOOK ---------- */
+
+#startBook{
+    margin-top:45px;
+}
+
+.hidden{
+    display:none !important;
+}
+
+#bookViewer{
+    width:850px;
+    height:600px;
+    max-width:95%;
+    margin-top:50px;
+    display:none;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+#memoryImage{
+    width:100%;
+    height:450px;
+    object-fit:contain;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+    background:rgba(255,255,255,.03);
+}
+
+.page-changing{
+    opacity:0;
+    transform:scale(.97) rotateY(10deg);
+    transition:.35s;
+}
+
+#memoryCaption{
+    margin:30px 0;
+    font-size:21px;
+    line-height:1.8;
+    color:#E5E5E5;
+}
+
+.book-navigation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+#pageNumber{
+    color:#D7D7D7;
+    font-weight:600;
+}
+
+/* ---------- LETTER ---------- */
+
+.final-track{
+    min-height:60vh;
+}
+
+#letterButton{
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(30px);
+    transition:.8s;
+}
+
+#letterButton.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+/*--- HEART COLLAGE ---*/
+
+.heart-section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.heart-section h2{
+    font-family:"Playfair Display",serif;
+    font-size:48px;
+    margin-bottom:60px;
+}
+
+#heartContainer{
+    position:relative;
+    width:800px;
+    height:700px;
+}
+
+.heart-photo{
+    position:absolute;
+    width:60px;
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+
+    transition:2s ease;
+}
+
+/* ---------- ANIMATION ---------- */
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes fadeBook{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:768px){
+
+    .vinyl{
+        width:220px;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .track h2,
+    .memory-book h2{
+        font-size:42px;
+    }
+
+    .track-text,
+    .memory-book p{
+        font-size:17px;
+    }
+
+    button{
+        padding:16px 34px;
+        font-size:16px;
+    }
+
+    .book-navigation{
+        flex-direction:column;
+        gap:20px;
+    }
+
+}

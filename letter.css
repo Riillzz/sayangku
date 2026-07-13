@@ -1,0 +1,258 @@
+/* ======================================
+   RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#081B33;
+    color:white;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+/* ======================================
+   BACKGROUND
+====================================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+}
+
+.blob{
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.45;
+}
+
+.blue{
+    background:#2E6EFF;
+    top:-120px;
+    left:-120px;
+}
+
+.red{
+    background:#D7263D;
+    bottom:-120px;
+    right:-120px;
+}
+
+/* ======================================
+   PAGE
+====================================== */
+
+.letter-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+    text-align:center;
+}
+
+/* ======================================
+   ENVELOPE
+====================================== */
+
+#envelope{
+    cursor:pointer;
+    transition:.4s;
+}
+
+#envelope:hover{
+    transform:translateY(-10px);
+}
+
+#envelope{
+    font-size:120px;
+}
+
+#envelope p{
+    font-size:18px;
+    color:#D7D7D7;
+    margin-top:20px;
+}
+
+/* ======================================
+   LETTER CARD
+====================================== */
+
+#letterCard{
+    width:750px;
+    max-width:95%;
+    padding:50px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-radius:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+
+    animation:fadeLetter .8s ease;
+
+    max-height:80vh;
+    overflow-y:auto;
+}
+
+#letterCard h1{
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+}
+
+#letterText{
+    font-size:20px;
+    line-height:2;
+    color:#E5E5E5;
+    white-space:pre-line;
+}
+
+/* ======================================
+   HIDDEN
+====================================== */
+
+.hidden{
+    display:none;
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+@keyframes fadeLetter{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@media(max-width:768px){
+
+    #envelope{
+        font-size:90px;
+    }
+
+    #letterCard{
+        padding:35px;
+    }
+
+    #letterCard h1{
+        font-size:32px;
+    }
+
+    #letterText{
+        font-size:17px;
+    }
+}
+#hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.floating-heart{
+    position:absolute;
+    font-size:24px;
+    animation:fall 6s linear forwards;
+}
+
+@keyframes fall{
+
+    from{
+        transform:
+            translateY(-100px);
+        opacity:1;
+    }
+
+    to{
+        transform:
+            translateY(110vh);
+        opacity:0;
+    }
+
+}
+#endingMessage{
+    margin-top:60px;
+    text-align:center;
+    margin-bottom:60px;
+
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+#endingMessage.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+#endingMessage h2{
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+#endingMessage p{
+    color:#D7D7D7;
+    line-height:2;
+    margin-bottom:35px;
+}
+.credit{
+    margin-top:50px;
+    color:#999;
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+#restartButton{
+    margin-top:40px;
+    padding:18px 45px;
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #D7263D,
+        #FF4F7A
+    );
+
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+
+    transition:all .4s ease;
+
+    box-shadow:
+        0 10px 30px rgba(215,38,61,.35);
+
+    position:relative;
+    overflow:hidden;
+}
+
+#restartButton:hover{
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 15px 40px rgba(255,79,122,.5);
+}
