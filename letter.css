@@ -197,6 +197,8 @@ body{
     opacity:0;
     transform:translateY(30px);
     transition:1s;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #endingMessage.show{
