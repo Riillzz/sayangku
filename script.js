@@ -190,152 +190,152 @@ const memories = [
 
 {
     image:"assets/photos/01.jpg",
-    caption:"Hari pertama yang selalu aku ingat ❤️"
+    caption:"Ceritanya foto ulang tahun"
 },
 
 {
     image:"assets/photos/02.jpg",
-    caption:"Aku mulai sadar kalau kamu adalah rumah."
+    caption:"oh ini pas kamu di lab sama rifka"
 },
 
 {
     image:"assets/photos/03.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Ini si Konternal-konternal itu"
 },
 
 {
     image:"assets/photos/04.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"ini ga tau apa"
 },
 
 {
     image:"assets/photos/05.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Eh maap kepencet emot"
 },
 
 {
     image:"assets/photos/06.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"First time jadi pengurus"
 },
 
 {
     image:"assets/photos/07.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"KICC anjay"
 },
 
 {
     image:"assets/photos/08.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Eh nyelip"
 },
 
 {
     image:"assets/photos/09.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Ga tau ini pas kapan"
 },
 
 {
     image:"assets/photos/10.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Kamu ke rumah aku yeyyy"
 },
 
 {
     image:"assets/photos/11.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"When yaa dikasi itu sama kamu?"
 },
 
 {
     image:"assets/photos/12.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Ini ga tau apa, tapi kamu ganteng banget aww"
 },
 
 {
     image:"assets/photos/13.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"lah ga ada, o iyaa foto kita dikit banget tau wkwk"
 },
 
 {
     image:"assets/photos/14.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Masih ga ada, ntarlah gampang foto lagi"
 },
 
 {
     image:"assets/photos/15.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Aku masih ngubek-ngubek galeri ayy nyari foto"
 },
 
 {
     image:"assets/photos/16.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Sabar yaa nanti aku tambahin"
 },
 
 {
     image:"assets/photos/17.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"Atau kamu mau nambahin?"
 },
 
 {
     image:"assets/photos/18.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"kalo foto yang berdua dikit banget bjirr"
 },
 
 {
     image:"assets/photos/19.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"ya gitu deh hehe"
 },
 
 {
     image:"assets/photos/20.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"kalo boleh nanti aku masukin foto bibi/bebe"
 },
 
 {
     image:"assets/photos/21.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"aman lah yaa wkwk"
 },
 
 {
     image:"assets/photos/22.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"udah ayy cape ngetik"
 },
 
 {
     image:"assets/photos/23.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"nanti  cari lagi dah fotonya"
 },
 
 {
     image:"assets/photos/24.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"yeyyy"
 },
 
 {
     image:"assets/photos/25.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"yeyyy"
 },
 
 {
     image:"assets/photos/26.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"yeyyy"
 },
 
 {
     image:"assets/photos/27.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"yeyyy"
 },
 
 {
     image:"assets/photos/28.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"yeyyy"
 },
 
 {
     image:"assets/photos/29.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"dah cape, fotonya belum ada lagi"
 },
 
 {
     image:"assets/photos/30.jpg",
-    caption:"Terima kasih sudah menjadi bagian terindah dalam hidupku."
+    caption:"okeh"
 }
 
 ];
@@ -592,6 +592,31 @@ setInterval(()=>{
     },11000);
 
 },700);
+
+// ======================================
+// MUSIC FADE OUT
+// ======================================
+
+function fadeOutMusic(audio, duration = 3000){
+    const interval = 50;
+    const step = audio.volume / (duration / interval);
+    const fade = setInterval(() => {
+        if(audio.volume > step){
+            audio.volume -= step;
+        }else{
+            audio.volume = 0;
+            audio.pause();
+            clearInterval(fade);
+        }
+    }, interval);
+}
+
+letterButton.addEventListener("click", () => {
+    fadeOutMusic(music, 2500);
+    setTimeout(() => {
+        window.location.href = "letter.html";
+    }, 1000);
+});
 
 // ======================================
 // END
