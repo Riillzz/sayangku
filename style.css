@@ -254,7 +254,6 @@ button:hover{
 .heart-section h2{
     font-family:"Playfair Display",serif;
     font-size:48px;
-    margin-bottom:60px;
 }
 
 #heartContainer{
@@ -266,8 +265,8 @@ button:hover{
 
 .heart-photo{
     position:absolute;
-    width:100px;
-    height:100px;
+    width:120px;
+    height:120px;
     object-fit:cover;
     border-radius:15px;
     transform:translate(-50%,-50%);

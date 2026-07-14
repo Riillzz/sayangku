@@ -36,13 +36,13 @@ playButton.addEventListener("click", async () => {
             document.querySelector(".track").scrollIntoView({
                 behavior:"smooth"
             });
-        },8000);
+        },3000);
         // Scroll ke Memory Book
         setTimeout(() => {
             document.querySelector(".memory-book").scrollIntoView({
                 behavior:"smooth"
             });
-        },6000);
+        },20000);
     }
     catch(error){
         console.log(error);
