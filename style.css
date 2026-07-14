@@ -344,3 +344,42 @@ button:hover{
         height:50px;
     }
 }
+
+.floating-heart{
+    position:fixed;
+    font-size:20px;
+    pointer-events:none;
+    animation:floatHeart linear forwards;
+    z-index:-1;
+}
+
+@keyframes floatHeart{
+
+    from{
+        transform:translateY(0) scale(.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.9;
+    }
+
+    to{
+        transform:translateY(-110vh) scale(1.5);
+        opacity:0;
+    }
+
+}
+
+#memoryImage{
+
+    transition:.5s;
+}
+
+#memoryImage:hover{
+
+    transform:
+    rotate(-1deg)
+    scale(1.02);
+
+}

@@ -397,6 +397,10 @@ function changePage(index){
 
     },300);
 
+    const flip=new Audio("assets/music/flip.mp3");
+
+    flip.play();
+
 }
 
 // ======================================
@@ -568,6 +572,26 @@ function openHeartSection(){
     },5000);
 
 }
+
+setInterval(()=>{
+
+    const heart=document.createElement("div");
+
+    heart.className="floating-heart";
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.bottom="-30px";
+    heart.style.fontSize=(18+Math.random()*20)+"px";
+    heart.style.animationDuration=(6+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },11000);
+
+},700);
 
 // ======================================
 // END
