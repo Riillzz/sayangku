@@ -67,6 +67,7 @@ body{
 #envelope{
     cursor:pointer;
     transition:.4s;
+    margin-right: 15px;
 }
 
 #envelope:hover{
