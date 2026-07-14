@@ -260,7 +260,7 @@ button:hover{
 #heartContainer{
     position:relative;
     width: 80%;
-    max-width:90%;
+    max-width:100%;
     aspect-ratio:1;
     margin:auto;
 }
