@@ -42,7 +42,7 @@ playButton.addEventListener("click", async () => {
             document.querySelector(".memory-book").scrollIntoView({
                 behavior:"smooth"
             });
-        },20000);
+        },15000);
     }
     catch(error){
         console.log(error);
