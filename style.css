@@ -259,7 +259,7 @@ button:hover{
 
 #heartContainer{
     position:relative;
-    width: 90px;;
+    width: 80%;
     max-width:90%;
     aspect-ratio:1;
     margin:auto;
