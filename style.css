@@ -259,9 +259,8 @@ button:hover{
 
 #heartContainer{
     position:relative;
-    width: 80px;
-    max-width:100px;
-    aspect-ratio:1;
+    width:700px;
+    height:650px;
     margin:auto;
 }
 
@@ -336,11 +335,9 @@ button:hover{
 
 @media(max-width:768px){
 
-    #heartContainer{
-        width:95vw;
-        height:95vw;
-        max-width:420px;
-        max-height:420px;
+     #heartContainer{
+        width:320px;
+        height:300px;
     }
 
     .heart-photo{
